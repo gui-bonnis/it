@@ -1,0 +1,28 @@
+### 1. Coding Standards
+
+- Java Naming Conventions
+    - Class, method, variable, and constant naming
+    - Use of CamelCase, UpperCamelCase, and snake_case
+- Code Formatting
+    - Indentation rules
+    - Consistent use of whitespace
+    - Bracket positioning (K&R style, Allman style)
+- Commenting and Documentation
+    - Javadoc usage
+    - Commenting conventions for methods, classes, and complex code
+    - Inline comments vs. block comments
+- Consistent Code Structure
+    - Method organization (e.g., constructors, getter/setter methods, utility methods)
+    - Class and method length limitations
+    - Grouping related fields and methods
+- Avoiding Magic Numbers
+    - Using constants and enums instead of hardcoded values
+- Error Handling Conventions
+    - Using proper exception handling (e.g., avoiding empty catch blocks)
+    - Specific exception types and meaningful error messages
+- Immutability
+    - Creating immutable classes where appropriate
+    - Understanding the benefits of immutability in Java
+- Use of Access Modifiers
+    - Choosing between `public`, `private`, `protected`, and `default` access
+    - Avoiding excessive exposure of class members

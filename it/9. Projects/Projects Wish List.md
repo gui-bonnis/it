@@ -1,0 +1,4 @@
+- AI Generator
+- Financial Management
+- Nutrition
+- Exercises

@@ -1,0 +1,1 @@
+When creating a feature related to lists add the Big Notation
