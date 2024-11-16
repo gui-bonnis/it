@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Vault Organization.md",
+                "file": "1. Programming/Java/4. Design and Architecture/SOLID Principles/Open & Closed Principle/Open & Closed Principle (OCP).md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Vault Organization"
+              "title": "Open & Closed Principle (OCP)"
             }
           }
         ]
@@ -31,10 +31,14 @@
             "id": "61daad64a1373f0b",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "1. Programming/Java/4. Design and Architecture/SOLID Principles/SOLID Principles.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "SOLID Principles"
             }
           }
         ]
@@ -68,7 +72,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "solidprinciples",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -178,10 +182,27 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "dd4f261fc1c2b6f8",
+  "active": "a2e2d2ef9ef9a03c",
   "lastOpenFiles": [
-    "Untitled.canvas",
+    "1. Programming/Java/4. Design and Architecture/SOLID Principles/SOLID Principles.md",
+    "1. Programming/Java/4. Design and Architecture/SOLID Principles/Open & Closed Principle/Open & Closed Principle (OCP).md",
+    "1. Programming/Java/4. Design and Architecture/SOLID Principles/Single Responsibility Principle/Single Responsibility Principle (SRP).md",
+    "1. Programming/Java/4. Design and Architecture/SOLID Principles/Liskov Substitution Principle/Liskov Substitution Principle (LSP).md",
+    "1. Programming/Java/4. Design and Architecture/SOLID Principles/Interface Segregation Principle/Interface Segregation Principle (ISP).md",
+    "1. Programming/Java/4. Design and Architecture/SOLID Principles/Dependency Injection/Dependency Injection (DI).md",
+    "1. Programming/Java/4. Design and Architecture/SOLID Principles/Interface Segregation Principle",
+    "1. Programming/Java/4. Design and Architecture/SOLID Principles/Liskov Substitution Principle",
+    "1. Programming/Java/4. Design and Architecture/SOLID Principles/Open & Closed Principle",
+    "1. Programming/Java/4. Design and Architecture/SOLID Principles/Single Responsibility Principle",
+    "0. Notes/templates/blog post.md",
+    "1. Programming/Java/4. Design and Architecture/Design Patterns/Design Patterns.md",
+    "1. Programming/Java/1. Core Java/Basics/Basic.md",
+    "Blog/Drafts.md",
+    "Blog/Published",
+    "Blog/Drafts",
+    "Blog",
     "Vault Organization.md",
+    "Untitled.canvas",
     "Welcome.md",
     "create a link.md"
   ]
