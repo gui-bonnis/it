@@ -4,44 +4,53 @@
     "type": "split",
     "children": [
       {
-        "id": "3b38fc10e6a1528a",
+        "id": "21654f5e776bc495",
         "type": "tabs",
         "children": [
           {
-            "id": "a2e2d2ef9ef9a03c",
+            "id": "f8c24cb638d2554e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1. Programming/Java/4. Design and Architecture/SOLID Principles/Open & Closed Principle/Open & Closed Principle (OCP).md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "Open & Closed Principle (OCP)"
-            }
-          }
-        ]
-      },
-      {
-        "id": "103e8a09c9629897",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "61daad64a1373f0b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1. Programming/Java/4. Design and Architecture/SOLID Principles/SOLID Principles.md",
+                "file": "0. Notes/GitLab Setup on MicroK8s.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SOLID Principles"
+              "title": "GitLab Setup on MicroK8s"
+            }
+          },
+          {
+            "id": "84616ef5f93af5e6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Manage MicroK8s with K9s.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Manage MicroK8s with K9s"
+            }
+          },
+          {
+            "id": "7bd5ba999ecb88a5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "0. Notes/Custom Method Mapping.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Custom Method Mapping"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -182,28 +191,44 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a2e2d2ef9ef9a03c",
+  "active": "7bd5ba999ecb88a5",
   "lastOpenFiles": [
-    "1. Programming/Java/4. Design and Architecture/SOLID Principles/SOLID Principles.md",
-    "1. Programming/Java/4. Design and Architecture/SOLID Principles/Open & Closed Principle/Open & Closed Principle (OCP).md",
-    "1. Programming/Java/4. Design and Architecture/SOLID Principles/Single Responsibility Principle/Single Responsibility Principle (SRP).md",
-    "1. Programming/Java/4. Design and Architecture/SOLID Principles/Liskov Substitution Principle/Liskov Substitution Principle (LSP).md",
-    "1. Programming/Java/4. Design and Architecture/SOLID Principles/Interface Segregation Principle/Interface Segregation Principle (ISP).md",
-    "1. Programming/Java/4. Design and Architecture/SOLID Principles/Dependency Injection/Dependency Injection (DI).md",
+    "0. Notes/Sort List by Columns.md",
+    "0. Notes/Custom Method Mapping.md",
+    "0. Notes/Max and Reverse Sort.md",
+    "0. Notes/Minimum Swaps Calculation.md",
+    "0. Notes/@Version Annotation in JPA.md",
+    "0. Notes/Kubernetes Job Scheduling Overview.md",
+    "0. Notes/MicroK8s Java Microservice Deployment.md",
+    "0. Notes/Throwing Exceptions in Streams.md",
+    "0. Notes/Java 22 Features Overview.md",
+    "0. Notes/Terraform MicroK8s Cluster Setup.md",
+    "0. Notes/Kubernetes DNS Ingress Workflow.md",
+    "0. Notes/Configure SSL NGINX MicroK8s.md",
+    "0. Notes/Kubernetes Domain Best Practices.md",
+    "0. Notes/Local Kubernetes Cluster Setup.md",
+    "0. Notes/Kubernetes Cluster Setup Guide.md",
+    "0. Notes/Secure Helm Installation MicroK8s.md",
+    "0. Notes/MetalLB with MicroK8s Setup.md",
+    "0. Notes/MicroK8s CNCF Minimum Features.md",
+    "0. Notes/Local Domain Setup MicroK8s.md",
+    "0. Notes/Configure Gitea HTTPS Repos.md",
+    "0. Notes/ArgoCD Repository Connections.md",
+    "0. Notes/Delete Namespace in MicroK8s.md",
+    "0. Notes/Simple GitLab Webapp Setup.md",
+    "0. Notes/Create Repo in MicroK8s.md",
+    "0. Notes/ArgoCD Fluentd Local Repository.md",
+    "0. Notes/Local Kubernetes Development Options.md",
+    "0. Notes/Untitled",
+    "1. Programming/Java/2. Advanced Java/Programming Paradigms/Functional Programming",
+    "1. Programming/Java/1. Core Java/Generics/LinkedList",
     "1. Programming/Java/4. Design and Architecture/SOLID Principles/Interface Segregation Principle",
     "1. Programming/Java/4. Design and Architecture/SOLID Principles/Liskov Substitution Principle",
     "1. Programming/Java/4. Design and Architecture/SOLID Principles/Open & Closed Principle",
     "1. Programming/Java/4. Design and Architecture/SOLID Principles/Single Responsibility Principle",
-    "0. Notes/templates/blog post.md",
-    "1. Programming/Java/4. Design and Architecture/Design Patterns/Design Patterns.md",
-    "1. Programming/Java/1. Core Java/Basics/Basic.md",
-    "Blog/Drafts.md",
     "Blog/Published",
     "Blog/Drafts",
     "Blog",
-    "Vault Organization.md",
-    "Untitled.canvas",
-    "Welcome.md",
-    "create a link.md"
+    "Untitled.canvas"
   ]
 }
