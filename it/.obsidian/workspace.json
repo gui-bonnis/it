@@ -13,44 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1. Programming/Java/1. Core Java/Basics/Basic.md",
+                "file": "0. Notes/Understanding Logback.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Basic"
-            }
-          },
-          {
-            "id": "5af5e82e3ff90e84",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "0. Notes/Array Manipulation Optimization.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Array Manipulation Optimization"
-            }
-          },
-          {
-            "id": "5c4dce304ee7a4cd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Vault Organization.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Vault Organization"
+              "title": "Understanding Logback"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -191,34 +162,34 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5c4dce304ee7a4cd",
+  "active": "55b23847c839b93d",
   "lastOpenFiles": [
-    "Welcome to My Knowledge Vault.md",
-    "Vault Organization.md",
+    "0. Notes/Structured Message Formats - Thoughts on What To Log.md",
+    "0. Notes/Understanding Logback.md",
+    "0. Notes/Well-Structured logging.md",
+    "0. Notes/Unlocking observability - Structured logging in Spring Boot.md",
+    "0. Notes/DDD Architecture HFT Pipeline.md",
+    "0. Notes/ProblemDetail and Structured Logging.md",
+    "0. Notes/ProblemDetail with MDC.md",
+    "0. Notes/ProblemDetail.md",
+    "0. Notes/Handling XML SOAP Requests.md",
+    "0. Notes/Feign 404 Handling.md",
+    "0. Notes/Mocking SOAP Server.md",
+    "1. Programming/Java/1. Core Java/Basics/Basic.md",
     "0. Notes/Array Manipulation Optimization.md",
-    "1. Programming/Java/1. Core Java/Generics/Stack.md",
-    "0. Notes/IT Interview Questions Belgium.md",
-    "0. Notes/Minimum Swaps Algorithm.md",
-    "0. Notes/New Year Chaos Solution.md",
-    "0. Notes/Java Stream API Methods.md",
-    "0. Notes/Consume Multiple Kafka Topics.md",
-    "0. Notes/MicroK8s Setup Guide.md",
-    "0. Notes/Terraform MicroK8s Helm Resources.md",
-    "0. Notes/Java Microservices API Integration.md",
-    "0. Notes/Java Spring Boot Factory Pattern.md",
-    "0. Notes/Kotlin vs Java Performance.md",
-    "0. Notes/Senior Java Interview Prep.md",
-    "0. Notes/Backend Java Developer Presentation.md",
-    "0. Notes/Idempotent HTTP Methods.md",
-    "0. Notes/Basic Java & Compilers Overview.md",
-    "0. Notes/Java DDD Example.md",
-    "0. Notes/Identificar Conceitos do Domínio.md",
-    "0. Notes/Java Predicates Overview Usage & Combining.md",
-    "0. Notes/Software Solution Architect Consultation.md",
-    "0. Notes/Senior Code Generator Help.md",
-    "0. Notes/Designing Programming Skill Game.md",
-    "0. Notes/CNCFlab On-Prem Structure.md",
-    "0. Notes/DNS Setup for Infrastructure..md",
+    "0. Notes/Progresso.md",
+    "2. Software Architecture and Design/Software Architecture and Design.md",
+    "2. Software Architecture and Design/Foundational Principles/Foundational Principles.md",
+    "1. Programming/Java/6. DevOps and Deployment/Generic DevOps and Deployment.md",
+    "1. Programming/Java/4. Design and Architecture/SOLID Principles/Single Responsibility Principle/Single Responsibility Principle (SRP).md",
+    "1. Programming/Java/4. Design and Architecture/SOLID Principles/SOLID Principles.md",
+    "1. Programming/Java/4. Design and Architecture/Best Practices/Best Practices.md",
+    "1. Programming/Java/4. Design and Architecture/Architectural Patterns/Architectural Patterns.md",
+    "1. Programming/Java/3. Frameworks and Libraries/Java Frameworks and Libraries.md",
+    "1. Programming/Java/3. Frameworks and Libraries/Messaging Libraries/Messaging Libraries.md",
+    "1. Programming/Java/3. Frameworks and Libraries/Communication Libraries/Communication Libraries.md",
+    "1. Programming/Java/2. Advanced Java/Programming Paradigms/Reactive Programming.md",
+    "1. Programming/Java/2. Advanced Java/Programming Paradigms/Functional Programming.md",
     "0. Notes/Untitled",
     "1. Programming/Java/2. Advanced Java/Programming Paradigms/Functional Programming",
     "1. Programming/Java/1. Core Java/Generics/LinkedList",
