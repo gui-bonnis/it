@@ -343,19 +343,15 @@ You can now define resources in Terraform to install tools via Helm charts.
 
 1. **Define a Helm release for ArgoCD**:
 
-hcl
-
-Copy code
-
-`# Create a namespace for ArgoCD resource "kubernetes_namespace" "argocd" {   metadata {     name = "argocd"   } }  # Install ArgoCD using Helm resource "helm_release" "argo_cd" {   name       = "argo-cd"   chart      = "argo-cd"   repository = "https://argoproj.github.io/argo-helm"   namespace  = kubernetes_namespace.argocd.metadata[0].name   version    = "4.5.2"    values = [     <<EOF     server:       service:         type: NodePort     EOF   ] }`
+```hcl
+# Create a namespace for ArgoCD resource "kubernetes_namespace" "argocd" {   metadata {     name = "argocd"   } }  # Install ArgoCD using Helm resource "helm_release" "argo_cd" {   name       = "argo-cd"   chart      = "argo-cd"   repository = "https://argoproj.github.io/argo-helm"   namespace  = kubernetes_namespace.argocd.metadata[0].name   version    = "4.5.2"    values = [     <<EOF     server:       service:         type: NodePort     EOF   ] }
+```
 
 2. **Define another Helm release for FluentCD**:
 
-hcl
-
-Copy code
-
-`# Create a namespace for FluentCD resource "kubernetes_namespace" "fluentcd" {   metadata {     name = "fluentcd"   } }  # Install FluentCD using Helm resource "helm_release" "fluent_cd" {   name       = "fluent-cd"   chart      = "fluentcd/fluentcd"   repository = "https://charts.fluentcd.io"   namespace  = kubernetes_namespace.fluentcd.metadata[0].name   version    = "1.0.0" }`
+```hcl
+# Create a namespace for FluentCD resource "kubernetes_namespace" "fluentcd" {   metadata {     name = "fluentcd"   } }  # Install FluentCD using Helm resource "helm_release" "fluent_cd" {   name       = "fluent-cd"   chart      = "fluentcd/fluentcd"   repository = "https://charts.fluentcd.io"   namespace  = kubernetes_namespace.fluentcd.metadata[0].name   version    = "1.0.0" }
+```
 
 ### **Step 5: Run Terraform**
 
@@ -397,11 +393,9 @@ Repeat the process for additional tools like **Prometheus**, **Grafana**, **Isti
 
 - For **Prometheus** and **Grafana**:
 
-hcl
-
-Copy code
-
-`# Install Prometheus using Helm resource "helm_release" "prometheus" {   name       = "prometheus"   chart      = "prometheus"   repository = "https://prometheus-community.github.io/helm-charts"   namespace  = "monitoring"   version    = "15.0.1" }  # Install Grafana using Helm resource "helm_release" "grafana" {   name       = "grafana"   chart      = "grafana"   repository = "https://grafana.github.io/helm-charts"   namespace  = "monitoring"   version    = "6.16.6" }`
+```hcl
+# Install Prometheus using Helm resource "helm_release" "prometheus" {   name       = "prometheus"   chart      = "prometheus"   repository = "https://prometheus-community.github.io/helm-charts"   namespace  = "monitoring"   version    = "15.0.1" }  # Install Grafana using Helm resource "helm_release" "grafana" {   name       = "grafana"   chart      = "grafana"   repository = "https://grafana.github.io/helm-charts"   namespace  = "monitoring"   version    = "6.16.6" }
+```
 
 ### **Step 7: Automate Everything with GitOps (Optional)**
 
@@ -467,20 +461,17 @@ To manage the entire infrastructure using GitOps, we first need to install **Arg
 
 1. Create a new **Terraform** configuration file `main.tf`.
 
-hcl
+```hcl
 
-Copy code
-
-`provider "kubernetes" {   config_path = "~/.kube/config" }  provider "helm" {   kubernetes {     config_path = "~/.kube/config"   } }  resource "kubernetes_namespace" "argocd" {   metadata {     name = "argocd"   } }  resource "helm_release" "argo_cd" {   name       = "argo-cd"   chart      = "argo-cd"   repository = "https://argoproj.github.io/argo-helm"   namespace  = kubernetes_namespace.argocd.metadata[0].name   version    = "4.5.2"    values = [     <<EOF     server:       service:         type: NodePort     EOF   ] }`
+provider "kubernetes" {   config_path = "~/.kube/config" }  provider "helm" {   kubernetes {     config_path = "~/.kube/config"   } }  resource "kubernetes_namespace" "argocd" {   metadata {     name = "argocd"   } }  resource "helm_release" "argo_cd" {   name       = "argo-cd"   chart      = "argo-cd"   repository = "https://argoproj.github.io/argo-helm"   namespace  = kubernetes_namespace.argocd.metadata[0].name   version    = "4.5.2"    values = [     <<EOF     server:       service:         type: NodePort     EOF   ] }
+```
 
 2. **Initialize and apply** the Terraform configuration:
     
-    bash
-    
-    Copy code
-    
-    `terraform init terraform apply`
-    
+```bash
+terraform init terraform apply
+```
+
 
 This will install **ArgoCD** in your MicroK8s cluster.
 
@@ -490,11 +481,9 @@ Once ArgoCD is installed, you need to set it up to watch a Git repository where 
 
 1. Access the ArgoCD UI by getting the ArgoCD service’s `NodePort`:
     
-    bash
-    
-    Copy code
-    
-    `microk8s kubectl get svc -n argocd`
+```bash
+microk8s kubectl get svc -n argocd
+```    
     
     Then, use the following credentials to log in:
     

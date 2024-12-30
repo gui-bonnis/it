@@ -1881,29 +1881,26 @@ The project can be structured as follows, with separate folders for **BDD** and 
 
 bash
 
-Copy code
-
-`my-shopping-cart-project/ │ ├── src/ │   ├── main/ │   │   └── java/ │   │       └── com/example/shoppingcart/ │   │           ├── ShoppingCart.java │   │           └── Item.java │   └── test/ │       └── java/ │           └── com/example/shoppingcart/ │               ├── ShoppingCartTest.java  # TDD tests │               └── ShoppingCartSteps.java # BDD step definitions │ ├── features/ │   └── shopping_cart.feature  # BDD scenarios in Gherkin │ ├── pom.xml  # Maven dependencies for Cucumber and JUnit └── README.md`
+```bash
+my-shopping-cart-project/ │ ├── src/ │   ├── main/ │   │   └── java/ │   │       └── com/example/shoppingcart/ │   │           ├── ShoppingCart.java │   │           └── Item.java │   └── test/ │       └── java/ │           └── com/example/shoppingcart/ │               ├── ShoppingCartTest.java  # TDD tests │               └── ShoppingCartSteps.java # BDD step definitions │ ├── features/ │   └── shopping_cart.feature  # BDD scenarios in Gherkin │ ├── pom.xml  # Maven dependencies for Cucumber and JUnit └── README.md
+```
 
 ### **Step 5: pom.xml (Maven Dependencies)**
 
 You’ll need to include dependencies for **JUnit** and **Cucumber** to run both BDD and TDD tests. Below is an example `pom.xml` for a Java-based project:
 
-xml
-
-Copy code
-
-`<dependencies>     <!-- JUnit for TDD -->     <dependency>         <groupId>junit</groupId>         <artifactId>junit</artifactId>         <version>4.13.2</version>         <scope>test</scope>     </dependency>      <!-- Cucumber for BDD -->     <dependency>         <groupId>io.cucumber</groupId>         <artifactId>cucumber-java</artifactId>         <version>7.0.0</version>         <scope>test</scope>     </dependency>          <dependency>         <groupId>io.cucumber</groupId>         <artifactId>cucumber-junit</artifactId>         <version>7.0.0</version>         <scope>test</scope>     </dependency> </dependencies>`
+```
+<dependencies>     <!-- JUnit for TDD -->     <dependency>         <groupId>junit</groupId>         <artifactId>junit</artifactId>         <version>4.13.2</version>         <scope>test</scope>     </dependency>      <!-- Cucumber for BDD -->     <dependency>         <groupId>io.cucumber</groupId>         <artifactId>cucumber-java</artifactId>         <version>7.0.0</version>         <scope>test</scope>     </dependency>          <dependency>         <groupId>io.cucumber</groupId>         <artifactId>cucumber-junit</artifactId>         <version>7.0.0</version>         <scope>test</scope>     </dependency> </dependencies>
+```
 
 ### **Step 6: CLI Workflow Update**
 
 The CLI can be updated to implement the step of generating the code project after the Story, BDD, and TDD review cycles. Here's how you can modify it:
 
-python
 
-Copy code
-
-`import os import shutil  # Directory for generated project PROJECT_DIR = 'my-shopping-cart-project'  # Function to generate project structure def generate_project(artifacts):     if not os.path.exists(PROJECT_DIR):         os.makedirs(PROJECT_DIR)      # Create src directories     os.makedirs(os.path.join(PROJECT_DIR, 'src', 'main', 'java', 'com', 'example', 'shoppingcart'))     os.makedirs(os.path.join(PROJECT_DIR, 'src', 'test', 'java', 'com', 'example', 'shoppingcart'))      # Create feature directory for BDD scenarios     os.makedirs(os.path.join(PROJECT_DIR, 'features'))      # Write BDD scenario to a .feature file     with open(os.path.join(PROJECT_DIR, 'features', 'shopping_cart.feature'), 'w') as f:         f.write(artifacts['BDD Scenarios'])      # Write README     with open(os.path.join(PROJECT_DIR, 'README.md'), 'w') as f:         f.write(f"# Project: {artifacts['Story']}\n\n")         f.write("This project implements BDD and TDD for a shopping cart feature.\n")      # Add pom.xml for dependencies (could add a template here)     shutil.copyfile('templates/pom.xml', os.path.join(PROJECT_DIR, 'pom.xml'))      print(f"Project generated at: {PROJECT_DIR}")  # Update CLI to include this step def run_step(step, artifacts):     if step['step'] == "Generate Code Project":         print(f"Generating project based on Story, BDD, and TDD...")         generate_project(artifacts)     else:         # Previous step logic for review...         pass  # Updated lifecycle.yaml for implementing code lifecycle = {     'lifecycle': [         {'step': 'Review Story', 'description': 'Review and refine the user story', 'roles': ['PO', 'BA', 'Dev'], 'required_artifacts': ['Story']},         {'step': 'Refine BDD', 'description': 'Refine the BDD scenarios', 'roles': ['PO', 'BA', 'Dev'], 'required_artifacts': ['BDD Scenarios', 'Story']},         {'step': 'Refine TDD', 'description': 'Write TDD test cases', 'roles': ['Dev', 'Tester'], 'required_artifacts': ['TDD Test Cases', 'BDD Scenarios']},         {'step': 'Generate Code Project', 'description': 'Generate the project with BDD and TDD tests', 'roles': ['Dev'], 'required_artifacts': ['Story', 'BDD Scenarios', 'TDD Test Cases']}     ] }`
+```python
+import os import shutil  # Directory for generated project PROJECT_DIR = 'my-shopping-cart-project'  # Function to generate project structure def generate_project(artifacts):     if not os.path.exists(PROJECT_DIR):         os.makedirs(PROJECT_DIR)      # Create src directories     os.makedirs(os.path.join(PROJECT_DIR, 'src', 'main', 'java', 'com', 'example', 'shoppingcart'))     os.makedirs(os.path.join(PROJECT_DIR, 'src', 'test', 'java', 'com', 'example', 'shoppingcart'))      # Create feature directory for BDD scenarios     os.makedirs(os.path.join(PROJECT_DIR, 'features'))      # Write BDD scenario to a .feature file     with open(os.path.join(PROJECT_DIR, 'features', 'shopping_cart.feature'), 'w') as f:         f.write(artifacts['BDD Scenarios'])      # Write README     with open(os.path.join(PROJECT_DIR, 'README.md'), 'w') as f:         f.write(f"# Project: {artifacts['Story']}\n\n")         f.write("This project implements BDD and TDD for a shopping cart feature.\n")      # Add pom.xml for dependencies (could add a template here)     shutil.copyfile('templates/pom.xml', os.path.join(PROJECT_DIR, 'pom.xml'))      print(f"Project generated at: {PROJECT_DIR}")  # Update CLI to include this step def run_step(step, artifacts):     if step['step'] == "Generate Code Project":         print(f"Generating project based on Story, BDD, and TDD...")         generate_project(artifacts)     else:         # Previous step logic for review...         pass  # Updated lifecycle.yaml for implementing code lifecycle = {     'lifecycle': [         {'step': 'Review Story', 'description': 'Review and refine the user story', 'roles': ['PO', 'BA', 'Dev'], 'required_artifacts': ['Story']},         {'step': 'Refine BDD', 'description': 'Refine the BDD scenarios', 'roles': ['PO', 'BA', 'Dev'], 'required_artifacts': ['BDD Scenarios', 'Story']},         {'step': 'Refine TDD', 'description': 'Write TDD test cases', 'roles': ['Dev', 'Tester'], 'required_artifacts': ['TDD Test Cases', 'BDD Scenarios']},         {'step': 'Generate Code Project', 'description': 'Generate the project with BDD and TDD tests', 'roles': ['Dev'], 'required_artifacts': ['Story', 'BDD Scenarios', 'TDD Test Cases']}     ] }
+```
 
 ### **Next Steps for Implementation**
 
@@ -2198,21 +2195,18 @@ Copy code
 
 #### **1. Maturity Lifecycle YAML (maturity_lifecycle.yaml)**
 
-yaml
 
-Copy code
-
-`lifecycle:   - step: "Configuration Management"     description: "Externalize all configurations using environment variables following the 12-Factor principle."     action: "Check if the project uses environment variables. If not, guide the user to refactor the configuration."   - step: "Containerization"     description: "Ensure the application is containerized for deployment portability."     action: "Check if Dockerfile exists. If not, suggest creating one using cloud-native best practices."   - step: "CI/CD Pipeline"     description: "Set up a Continuous Integration/Continuous Deployment pipeline."     action: "Ensure there's a CI/CD configuration file (GitHub Actions, Jenkins, etc.). Guide user on setting it up."   - step: "Logging"     description: "Ensure application logs are streamable and follow the 12-Factor logging principle."     action: "Check if logs are printed to stdout. If not, recommend setting up centralized logging."   - step: "Monitoring and Health Checks"     description: "Monitor application metrics and expose health checks."     action: "Verify if health check and metrics endpoints exist. Suggest tools like Prometheus or cloud services for monitoring."   - step: "Scalability"     description: "Ensure the application is scalable using containers or cloud resources."     action: "Check Kubernetes or cloud scaling configurations. Recommend Kubernetes Horizontal Pod Autoscaler."   - step: "State and Database Management"     description: "Ensure the application externalizes any state, following the 12-Factor processes principle."     action: "Check database connection configuration and state externalization. Suggest external database or cache setup."`
+```yaml
+lifecycle:   - step: "Configuration Management"     description: "Externalize all configurations using environment variables following the 12-Factor principle."     action: "Check if the project uses environment variables. If not, guide the user to refactor the configuration."   - step: "Containerization"     description: "Ensure the application is containerized for deployment portability."     action: "Check if Dockerfile exists. If not, suggest creating one using cloud-native best practices."   - step: "CI/CD Pipeline"     description: "Set up a Continuous Integration/Continuous Deployment pipeline."     action: "Ensure there's a CI/CD configuration file (GitHub Actions, Jenkins, etc.). Guide user on setting it up."   - step: "Logging"     description: "Ensure application logs are streamable and follow the 12-Factor logging principle."     action: "Check if logs are printed to stdout. If not, recommend setting up centralized logging."   - step: "Monitoring and Health Checks"     description: "Monitor application metrics and expose health checks."     action: "Verify if health check and metrics endpoints exist. Suggest tools like Prometheus or cloud services for monitoring."   - step: "Scalability"     description: "Ensure the application is scalable using containers or cloud resources."     action: "Check Kubernetes or cloud scaling configurations. Recommend Kubernetes Horizontal Pod Autoscaler."   - step: "State and Database Management"     description: "Ensure the application externalizes any state, following the 12-Factor processes principle."     action: "Check database connection configuration and state externalization. Suggest external database or cache setup."
+```
 
 ---
 
 #### **2. CLI Implementation (cli.py)**
 
-python
-
-Copy code
-
-`import os import yaml  CONFIG_FILE = './config/maturity_lifecycle.yaml' REPORT_FILE = './reports/audit_report.txt'  def load_lifecycle():     """Load the maturity lifecycle from YAML configuration."""     with open(CONFIG_FILE, 'r') as file:         lifecycle = yaml.safe_load(file)     return lifecycle['lifecycle']  def write_report(report_content):     """Append progress or report content to audit report."""     with open(REPORT_FILE, 'a') as file:         file.write(report_content + '\n')  def check_step_done(step):     """Prompt user to confirm if the current step is completed."""     print(f"Step: {step['step']}")     print(f"Description: {step['description']}")     user_input = input("Is this step done? (y/n): ").strip().lower()     return user_input == 'y'  def process_lifecycle():     """Iterate over the lifecycle steps and execute the actions."""     lifecycle = load_lifecycle()          for step in lifecycle:         print("\n")         if check_step_done(step):             print(f"Step '{step['step']}' is marked as done.")             write_report(f"Step '{step['step']}' completed.")         else:             print(f"Suggested Action: {step['action']}")             write_report(f"Step '{step['step']}' pending. Suggested Action: {step['action']}")             break  if __name__ == "__main__":     print("Project Maturity Improvement CLI\n")     process_lifecycle()`
+```python
+import os import yaml  CONFIG_FILE = './config/maturity_lifecycle.yaml' REPORT_FILE = './reports/audit_report.txt'  def load_lifecycle():     """Load the maturity lifecycle from YAML configuration."""     with open(CONFIG_FILE, 'r') as file:         lifecycle = yaml.safe_load(file)     return lifecycle['lifecycle']  def write_report(report_content):     """Append progress or report content to audit report."""     with open(REPORT_FILE, 'a') as file:         file.write(report_content + '\n')  def check_step_done(step):     """Prompt user to confirm if the current step is completed."""     print(f"Step: {step['step']}")     print(f"Description: {step['description']}")     user_input = input("Is this step done? (y/n): ").strip().lower()     return user_input == 'y'  def process_lifecycle():     """Iterate over the lifecycle steps and execute the actions."""     lifecycle = load_lifecycle()          for step in lifecycle:         print("\n")         if check_step_done(step):             print(f"Step '{step['step']}' is marked as done.")             write_report(f"Step '{step['step']}' completed.")         else:             print(f"Suggested Action: {step['action']}")             write_report(f"Step '{step['step']}' pending. Suggested Action: {step['action']}")             break  if __name__ == "__main__":     print("Project Maturity Improvement CLI\n")     process_lifecycle()
+```
 
 ---
 
@@ -2220,11 +2214,9 @@ Copy code
 
 This module will help audit the project’s current state to assist in evaluating compliance with 12-Factor and CNCF best practices.
 
-python
-
-Copy code
-
-`import os  def check_dockerfile():     """Check if a Dockerfile exists."""     return os.path.isfile('Dockerfile')  def check_env_variables():     """Check if environment variables are being used."""     return os.path.isfile('.env')  def audit_project():     """Audit the project based on various 12-Factor and CNCF principles."""     report = []          if check_dockerfile():         report.append("Dockerfile found: Containerization in place.")     else:         report.append("Dockerfile not found: Please containerize the application.")      if check_env_variables():         report.append(".env file found: Configuration is externalized.")     else:         report.append("No .env file: Please externalize configuration.")      return "\n".join(report)  if __name__ == "__main__":     audit_result = audit_project()     print("Project Audit Report:")     print(audit_result)          # Write audit to a report file     with open('./reports/audit_report.txt', 'w') as report_file:         report_file.write(audit_result)`
+```
+import os  def check_dockerfile():     """Check if a Dockerfile exists."""     return os.path.isfile('Dockerfile')  def check_env_variables():     """Check if environment variables are being used."""     return os.path.isfile('.env')  def audit_project():     """Audit the project based on various 12-Factor and CNCF principles."""     report = []          if check_dockerfile():         report.append("Dockerfile found: Containerization in place.")     else:         report.append("Dockerfile not found: Please containerize the application.")      if check_env_variables():         report.append(".env file found: Configuration is externalized.")     else:         report.append("No .env file: Please externalize configuration.")      return "\n".join(report)  if __name__ == "__main__":     audit_result = audit_project()     print("Project Audit Report:")     print(audit_result)          # Write audit to a report file     with open('./reports/audit_report.txt', 'w') as report_file:         report_file.write(audit_result)
+```
 
 ---
 

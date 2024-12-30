@@ -355,21 +355,19 @@ Sure! Let's modify the previous example to use reactive programming with Spring 
 
 First, ensure you have the necessary dependencies in your `pom.xml`.
 
-xml
 
-Copy code
-
-`<dependencies>     <!-- Spring Boot Starter WebFlux -->     <dependency>         <groupId>org.springframework.boot</groupId>         <artifactId>spring-boot-starter-webflux</artifactId>     </dependency>     <!-- Spring Data MongoDB Reactive -->     <dependency>         <groupId>org.springframework.boot</groupId>         <artifactId>spring-boot-starter-data-mongodb-reactive</artifactId>     </dependency>     <!-- Jackson for JSON processing -->     <dependency>         <groupId>com.fasterxml.jackson.core</groupId>         <artifactId>jackson-databind</artifactId>     </dependency>     <!-- Lombok for boilerplate code reduction (optional) -->     <dependency>         <groupId>org.projectlombok</groupId>         <artifactId>lombok</artifactId>         <scope>provided</scope>     </dependency> </dependencies>`
+```xml
+<dependencies>     <!-- Spring Boot Starter WebFlux -->     <dependency>         <groupId>org.springframework.boot</groupId>         <artifactId>spring-boot-starter-webflux</artifactId>     </dependency>     <!-- Spring Data MongoDB Reactive -->     <dependency>         <groupId>org.springframework.boot</groupId>         <artifactId>spring-boot-starter-data-mongodb-reactive</artifactId>     </dependency>     <!-- Jackson for JSON processing -->     <dependency>         <groupId>com.fasterxml.jackson.core</groupId>         <artifactId>jackson-databind</artifactId>     </dependency>     <!-- Lombok for boilerplate code reduction (optional) -->     <dependency>         <groupId>org.projectlombok</groupId>         <artifactId>lombok</artifactId>         <scope>provided</scope>     </dependency> </dependencies>
+```
 
 ### Define Events and Metadata
 
 Define your events, including metadata and versioning.
 
-java
 
-Copy code
-
-`import lombok.AllArgsConstructor; import lombok.Data; import lombok.NoArgsConstructor;  @Data @AllArgsConstructor @NoArgsConstructor public abstract class BaseEvent<T> {     private T id;     private String version;     private EventMetadata metadata; }  @Data @AllArgsConstructor @NoArgsConstructor public class AccountCreatedEvent extends BaseEvent<String> {     private String ownerName; }  @Data @AllArgsConstructor @NoArgsConstructor public class MoneyDepositedEvent extends BaseEvent<String> {     private double amount; }  @Data @AllArgsConstructor @NoArgsConstructor public class MoneyWithdrawnEvent extends BaseEvent<String> {     private double amount; }  @Data @AllArgsConstructor @NoArgsConstructor public class EventMetadata {     private String userId;     private String correlationId;     private String source;     private String timestamp; }`
+```java
+import lombok.AllArgsConstructor; import lombok.Data; import lombok.NoArgsConstructor;  @Data @AllArgsConstructor @NoArgsConstructor public abstract class BaseEvent<T> {     private T id;     private String version;     private EventMetadata metadata; }  @Data @AllArgsConstructor @NoArgsConstructor public class AccountCreatedEvent extends BaseEvent<String> {     private String ownerName; }  @Data @AllArgsConstructor @NoArgsConstructor public class MoneyDepositedEvent extends BaseEvent<String> {     private double amount; }  @Data @AllArgsConstructor @NoArgsConstructor public class MoneyWithdrawnEvent extends BaseEvent<String> {     private double amount; }  @Data @AllArgsConstructor @NoArgsConstructor public class EventMetadata {     private String userId;     private String correlationId;     private String source;     private String timestamp; }
+```
 
 ### Event Store Repository
 
@@ -385,11 +383,9 @@ Copy code
 
 Define the event entity for MongoDB.
 
-java
-
-Copy code
-
-`import lombok.Data; import org.springframework.data.annotation.Id; import org.springframework.data.mongodb.core.mapping.Document;  @Data @Document public class EventEntity {     @Id     private String id;     private String aggregateId;     private String eventType;     private String eventData;     private String timestamp;     private Integer version;     private String metadata; }`
+```java 
+import lombok.Data; import org.springframework.data.annotation.Id; import org.springframework.data.mongodb.core.mapping.Document;  @Data @Document public class EventEntity {     @Id     private String id;     private String aggregateId;     private String eventType;     private String eventData;     private String timestamp;     private Integer version;     private String metadata; }
+```
 
 ### Event Store Service
 

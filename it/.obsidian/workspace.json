@@ -10,18 +10,51 @@
           {
             "id": "55b23847c839b93d",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
-                "file": "0. Notes/Local Dev Environment Setup.md",
+                "file": "0. Notes/Patterns and strategies to organize and share components or structures.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Patterns and strategies to organize and share components or structures"
+            }
+          },
+          {
+            "id": "8bb6b149f1aaad3e",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "0. Notes/Microservices Architecture Overview.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Microservices Architecture Overview"
+            }
+          },
+          {
+            "id": "e2bb277d8ca826c7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "0. Notes/CLI Chat Management.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Local Dev Environment Setup"
+              "title": "CLI Chat Management"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -52,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "pom.xml",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -93,9 +126,9 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Welcome.md",
-                "collapseAll": false,
-                "extraContext": false,
+                "file": "What is the structure of DDD projects in java.md",
+                "collapseAll": true,
+                "extraContext": true,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
@@ -103,7 +136,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Welcome"
+              "title": "Backlinks for What is the structure of DDD projects in java"
             }
           },
           {
@@ -112,12 +145,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Welcome.md",
+                "file": "What is the structure of DDD projects in java.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Welcome"
+              "title": "Outgoing links from What is the structure of DDD projects in java"
             }
           },
           {
@@ -139,18 +172,18 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Welcome.md"
+                "file": "0. Notes/CLI Chat Management.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Welcome"
+              "title": "Outline of CLI Chat Management"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -162,13 +195,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "55b23847c839b93d",
+  "active": "dd4f261fc1c2b6f8",
   "lastOpenFiles": [
-    "0. Notes/RBAC Kubernetes Keycloak Integration.md",
-    "0. Notes/Local Dev Environment Setup.md",
+    "0. Notes/CacheProperties Binding Error.md",
+    "0. Notes/Basic Java & Compilers Overview.md",
+    "0. Notes/Event Sourcing Overview.md",
+    "What is the structure of DDD projects in java.md",
     "0. Notes/Patterns and strategies to organize and share components or structures.md",
-    "0. Notes/Merge back from master.md",
     "0. Notes/Microservices Architecture Overview.md",
+    "0. Notes/Local Kubernetes Development Options.md",
+    "0. Notes/Untitled.md",
+    "0. Notes/Local Dev Environment Setup.md",
+    "0. Notes/RBAC Kubernetes Keycloak Integration.md",
+    "0. Notes/Merge back from master.md",
     "0. Notes/Hexagonal Architecture Package Structure.md",
     "0. Notes/Kafka Record Prioritization.md",
     "0. Notes/Spring Cloud Config vs Kubernetes.md",
@@ -187,12 +226,6 @@
     "0. Notes/Understanding Logback.md",
     "0. Notes/Well-Structured logging.md",
     "0. Notes/Unlocking observability - Structured logging in Spring Boot.md",
-    "0. Notes/ProblemDetail with MDC.md",
-    "0. Notes/ProblemDetail.md",
-    "0. Notes/Handling XML SOAP Requests.md",
-    "0. Notes/Feign 404 Handling.md",
-    "0. Notes/Mocking SOAP Server.md",
-    "1. Programming/Java/1. Core Java/Basics/Basic.md",
     "0. Notes/Untitled",
     "1. Programming/Java/2. Advanced Java/Programming Paradigms/Functional Programming",
     "1. Programming/Java/1. Core Java/Generics/LinkedList",
